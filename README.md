@@ -16,7 +16,7 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
   
 ## Dataset and reproducibility
 
-   - Source: Daily returns from a financial index/stock portfolio [Go to stooq](https://stooq.com/)
+   - Source: Daily returns from Stooq, a website that provides a wide range of free historical financial data [Go to stooq](https://stooq.com/)
    - Timeframe: 248 trading days (≈ 1 year).
 
 
