@@ -16,12 +16,12 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
   
 ## Dataset and reproducibility
 
-   - Source: Daily returns from Stooq, a website that provides a wide range of free historical financial data [Go to stooq](https://stooq.com/)
-   - Timeframe: 248 trading days (≈ 1 year).
-     
+### Source: Daily returns from Stooq, a website that provides a wide range of free historical financial data [Go to stooq](https://stooq.com/)
+
+### Timeframe: 248 trading days (≈ 1 year).    
+
 ### Data Pipeline
 
-1) Data ingestion (Power Query)
    - Parameterized function [fnGetStooq1Y](code/fnGetStooq1Y.pq) downloads CSV, promotes headers, renames, converts types, filters last 1 year.
    - Create tickers for stocks [Apple](code/AAPL.US), [Bitcoin](code/BTCUSD), [Gold](code/XAUUSD) to load in the table.
    - It makes data reproducible, single-click refresh; avoids manual CSV downloads.
