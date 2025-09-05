@@ -22,7 +22,7 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
 ### Data Pipeline
 
 1) Data ingestion (Power Query)
-   - Parameterized function [fnGetStooq1Y] (code/fnGetStooq1Y.pq) downloads CSV, promotes headers, renames, converts types, filters last 1 year.
+   - Parameterized function [fnGetStooq1Y](code/fnGetStooq1Y.pq) downloads CSV, promotes headers, renames, converts types, filters last 1 year.
    - Create tickers = fnGetStooq_1Y("AAPL.US"), = fnGetStooq_1Y("XAUUSD"), = fnGetStooq_1Y("BTCUSD") to load stocks in the table.
    - It makes data reproducible, single-click refresh; avoids manual CSV downloads.
 
