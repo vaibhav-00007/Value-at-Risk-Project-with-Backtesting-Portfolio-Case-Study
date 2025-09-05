@@ -14,13 +14,13 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - How I answer it: Backtest VaR with Kupiec’s POF (frequency) test, compare observed vs expected exceptions, and compute p-values.
    - Key metrics: Number of exceptions (x), sample size (n), observed exception rate (p̂), LR statistic, p-value, and pass/fail decision per method.
   
-## Dataset and reproducibility
+## Dataset and Reproducibility
 
-### Source:
+### Source
 
    - Daily returns from Stooq, a website that provides a wide range of historical financial data [Go to stooq](https://stooq.com/)
 
-### Timeframe:
+### Timeframe
 
    - 248 trading days (≈ 1 year).    
 
@@ -30,5 +30,9 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - Create tickers for stocks [Apple](code/AAPL.US), [Bitcoin](code/BTCUSD), [Gold](code/XAUUSD) to load in the table.
    - It makes data reproducible, single-click refresh; avoids manual CSV downloads.
 
-2) 
+### Data Handling
+   - To align trading calendars (stock vs 24/7 crypto) and avoid errors due to missing values, the Excel function =IFERROR(BTCUSD[@Close]/BTCUSD!B230-1,"") was used. 
+
+
+ 
 
