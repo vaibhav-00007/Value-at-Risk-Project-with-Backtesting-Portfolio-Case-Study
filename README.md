@@ -18,6 +18,12 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
 
    - Source: Daily returns from Stooq, a website that provides a wide range of free historical financial data [Go to stooq](https://stooq.com/)
    - Timeframe: 248 trading days (≈ 1 year).
+     
+### Data Pipeline
 
+1) Data ingestion (Power Query)
+   - Parameterized function fnGetStooq1Y downloads CSV, promotes headers, renames, converts types, filters last 1 year.
+   - Create tickers = fnGetStooq_1Y("AAPL.US"), = fnGetStooq_1Y("XAUUSD"), = fnGetStooq_1Y("BTCUSD") to load Apple, Gold, and Bitcoin stocks in the table.
+   - It makes data reproducible, single-click refresh; avoids manual CSV downloads.
 
 
