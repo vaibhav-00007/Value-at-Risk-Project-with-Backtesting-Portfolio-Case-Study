@@ -16,8 +16,8 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
   
 ## Dataset and reproducibility
 
-### Source: Daily returns from a financial index/stock portfolio (e.g., S&P500 / NSE NIFTY).
-### Timeframe: 248 trading days (≈ 1 year).
+   - Source: Daily returns from a financial index/stock portfolio (e.g., S&P500 / NSE NIFTY).
+   - Timeframe: 248 trading days (≈ 1 year).
 
 
 
