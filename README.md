@@ -31,7 +31,23 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - It makes data reproducible, single-click refresh; avoids manual CSV downloads.
 
 ### Data Handling
-   - To align trading calendars (stock vs 24/7 crypto) and avoid errors due to missing values, the Excel function =IFERROR(BTCUSD[@Close]/BTCUSD!B230-1,"") was used. 
+   - To align trading calendars (stock vs 24/7 crypto) and avoid errors due to missing values, the Excel function =IFERROR(stock,"") was used.
+
+### Compute returns
+
+   - Daily simple returns: stock_return = Close_t / Close_{t-1} - 1
+   - Excel formula: stock return =IFERROR(BTCUSD[@Close]/BTCUSD!B2-1,"") 
+
+### Portfolio returns
+
+   - Weighted sum: R_p,t = w1*r1,t + w2*r2,t + w3*r3,t
+   - Calculated portfolio return w the excel function =SUMPRODUCT(B3:D3,$J$2:$L$2)
+
+### Covariance & Correlation
+
+   - Calculate COVARIANCE.S() & CORREL() or via Excel Data Analysis tool.
+   - Needed for Parametric VaR and Monte Carlo correlation.
+      
 
 
  
