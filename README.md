@@ -14,7 +14,10 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - How I answer it: Backtest VaR with Kupiec’s POF (frequency) test, compare observed vs expected exceptions, and compute p-values.
    - Key metrics: Number of exceptions (x), sample size (n), observed exception rate (p̂), LR statistic, p-value, and pass/fail decision per method.
   
-3) 
+## Dataset and reproducibility
+
+### Source: Daily returns from a financial index/stock portfolio (e.g., S&P500 / NSE NIFTY).
+### Timeframe: 248 trading days (≈ 1 year).
 
 
 
