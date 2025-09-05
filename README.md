@@ -1,4 +1,4 @@
-# Value at Risk— Historical, Parametric & Monte Carlo- with Backtesting
+# Value at Risk— Historical, Parametric & Monte Carlo Method with Backtesting
 Excel-based VaR project that pulls 1-year daily prices (AAPL, GLD, BTC), normalizes, builds portfolio returns, computes VaR (Historical / Parametric / Monte Carlo), and performs backtesting (Kupiec POF). Focus on automation (Power Query), reproducibility, and explainable finance.
 The goal is to measure portfolio risk, evaluate model reliability, and demonstrate applied risk analytics skills.
 
