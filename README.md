@@ -26,4 +26,5 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - Create tickers for stocks [Apple](code/AAPL.US), [Bitcoin](code/BTCUSD), [Gold](code/XAUUSD) to load in the table.
    - It makes data reproducible, single-click refresh; avoids manual CSV downloads.
 
+2) 
 
