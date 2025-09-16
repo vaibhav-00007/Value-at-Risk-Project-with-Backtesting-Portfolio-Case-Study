@@ -14,7 +14,7 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - How I answer it: Backtest VaR with Kupiec’s POF (frequency) test, compare observed vs expected exceptions, and compute p-values.
    - Key metrics: Number of exceptions (x), sample size (n), observed exception rate (p̂), LR statistic, p-value, and pass/fail decision per method.
   
-## Dataset and Reproducibility
+## Dataset 
 
 ### Source
 
@@ -22,7 +22,13 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
 
 ### Timeframe
 
-   - 248 trading days (≈ 1 year).    
+   - 248 trading days (≈ 1 year).
+
+### Portfolio Assumptions
+
+   - The portfolio analyzed is valued at USD 1 million, allocated as follows: 30% Apple, 40% Gold, 30% Bitcoin.
+
+## Reproducibility and Automation
 
 ### Data Pipeline
 
@@ -39,9 +45,6 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - Daily simple returns: stock_return = Close_t / Close_{t-1} - 1
    - Excel formula: stock return =IFERROR(BTCUSD[@Close]/BTCUSD!B2-1,"")
 
-### Portfolio Assumptions
-
-   - The portfolio analyzed is valued at USD 1 million, allocated as follows: 30% Apple, 40% Gold, 30% Bitcoin.
 
 ### Portfolio returns
 
