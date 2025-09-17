@@ -96,7 +96,13 @@ The project computes 1-day portfolio VaR at 95% and 99% confidence using three i
         - Generate Covariance Matrix.
         - Generate Cholesky decomposition Matrix.
         - Generate correlated random variables using Cholesky decomposition Matrix and uncorrelated random variables.
-        - 
+        - Considering the risk-free rate at 4%, calculate the volatility of each stock.
+        - Generate a simulated price for each day using the risk-free rate, volatility, and the closing price of the last day the stock traded.
+        - Calculate log returns of stocks using simulated prices.
+        - Calculate portfolio return using log returns and stock weights in the portfolio.
+        - Arranging portfolio returns in ascending order.
+        - Identify the 5th and 1st percentiles for 95% and 99% VaR.
+        - Getting 1-day VaR by multiplying them by the portfolio value. 
 
  
 
