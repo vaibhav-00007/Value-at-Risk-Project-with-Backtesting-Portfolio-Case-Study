@@ -74,9 +74,18 @@ The project computes 1-day portfolio VaR at 95% and 99% confidence using three i
       -   Sorted returns in Ascending Order.
       -   Ranked the order 1 to 249.
       -   Identify the 5th and 1st percentiles for 95% and 99% VaR.
+      -   Getting 1-day VaR by multiplying them by the portfolio value. 
     
 ### 2. Parametric (Variance-Covariance)
-      
+
+   - Assumes returns follow a normal distribution.
+   - Steps:
+      - Collect the last 248 daily returns for each asset.
+      - Calculated Portfolio returns.
+      - Calculated Covariance Matrix.
+      - Calculated mean (μ) and standard deviation (σ) of portfolio returns.
+      - Calculated z value, the normal quantile (e.g., -1.65 for 95%, -2.33 for 99%).
+      - Getting 1-day VaR using a formula (μ + σ * z) * portfolio value.
 
 
  
