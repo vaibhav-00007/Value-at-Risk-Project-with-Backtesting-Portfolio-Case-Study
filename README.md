@@ -2,7 +2,7 @@
 Excel-based VaR project that pulls 1-year daily prices (AAPL, GLD, BTC), normalizes, builds portfolio returns, computes VaR (Historical / Parametric / Monte Carlo), and performs backtesting (Kupiec POF). Focus on automation (Power Query), reproducibility, and explainable finance.
 The goal is to measure portfolio risk, evaluate model reliability, and demonstrate applied risk analytics skills.
 
-### Background
+## Background
 
    - In real-world portfolio management, risk is just as important as return. Asset managers, banks, and hedge funds must continuously monitor the potential downside of their portfolios to comply with regulatory capital requirements (Basel III/IV), set risk limits, and design hedging strategies.
    - This project replicates the same risk analytics that financial institutions use by applying Value at Risk (VaR) models on a diversified $1M portfolio (30% Apple, 40% Gold, 30% Bitcoin).
@@ -11,7 +11,7 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
       - Bitcoin (BTC) captures high-volatility alternative assets.
    - By quantifying “how much can I lose in one day with 95% or 99% confidence?”, and backtesting the models for reliability, this project bridges the gap between academic risk theory and practical decision-making.
 
-### Questions to Analyze
+## Questions to Analyze
 
 1) How large is my portfolio’s one-day downside risk?
    - Why it matters: Quantifies potential loss in a single trading day so risk limits, capital buffers, and stop-loss rules can be set.
@@ -61,6 +61,13 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - Calculated portfolio return w the excel function =SUMPRODUCT(B3:D3,$J$2:$L$2)
 
 ## Methodology
+
+The project computes 1-day portfolio VaR at 95% and 99% confidence using three industry-standard approaches:
+1. Historical Simulation
+   - Uses actual past portfolio returns.
+   - No distributional assumptions (non-parametric).
+   - Steps:
+      -   
       
 
 
