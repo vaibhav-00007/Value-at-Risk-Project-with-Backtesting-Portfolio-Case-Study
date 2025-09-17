@@ -87,6 +87,16 @@ The project computes 1-day portfolio VaR at 95% and 99% confidence using three i
       - Calculated z value, the normal quantile (e.g., -1.65 for 95%, -2.33 for 99%).
       - Getting 1-day VaR using a formula (μ + σ * z) * portfolio value.
 
+### 3. Monte Carlo Simulation
+
+   - Simulates hundreds of possible portfolio return paths based on μ and σ.
+   - Steps:
+        - Calculated returns of each asset and portfolio returns.
+        - Generate uncorrelated random variables.
+        - Generate Covariance Matrix.
+        - Generate Cholesky decomposition Matrix.
+        - Generate correlated random variables using Cholesky decomposition Matrix and uncorrelated random variables.
+        - 
 
  
 
