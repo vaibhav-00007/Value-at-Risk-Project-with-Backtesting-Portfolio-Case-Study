@@ -63,11 +63,19 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
 ## Methodology
 
 The project computes 1-day portfolio VaR at 95% and 99% confidence using three industry-standard approaches:
-1. Historical Simulation
+
+### 1. Historical Simulation
+   
    - Uses actual past portfolio returns.
    - No distributional assumptions (non-parametric).
    - Steps:
-      -   
+      -   Collect the last 248 daily returns for each asset.
+      -   Calculated Portfolio returns.
+      -   Sorted returns in Ascending Order.
+      -   Ranked the order 1 to 249.
+      -   Identify the 5th and 1st percentiles for 95% and 99% VaR.
+    
+### 2. Parametric (Variance-Covariance)
       
 
 
