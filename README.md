@@ -102,7 +102,9 @@ The project computes 1-day portfolio VaR at 95% and 99% confidence using three i
         - Calculate portfolio return using log returns and stock weights in the portfolio.
         - Arranging portfolio returns in ascending order.
         - Identify the 5th and 1st percentiles for 95% and 99% VaR.
-        - Getting 1-day VaR by multiplying them by the portfolio value. 
+        - Getting 1-day VaR by multiplying them by the portfolio value.
+
+## 
 
  
 
