@@ -122,5 +122,7 @@ To validate whether the calculated VaR models are statistically reliable, I appl
    - High exceptions → VaR underestimates risk.
    - Low exceptions → VaR too conservative, ties up excess capital.
 
+## Results
+
  
 
