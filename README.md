@@ -104,7 +104,23 @@ The project computes 1-day portfolio VaR at 95% and 99% confidence using three i
         - Identify the 5th and 1st percentiles for 95% and 99% VaR.
         - Getting 1-day VaR by multiplying them by the portfolio value.
 
-## 
+## Backtesting
+
+To validate whether the calculated VaR models are statistically reliable, I applied:
+
+###  Kupiec’s Proportion of Failures (POF) Test
+   - This test specifically checks whether the no. of times losses exceeded the VaR number is consistent with the Confidence Interval set up by the model.
+   - Steps:
+      - Null hypothesis: Expected exception rate matches actual.
+      - Compute p as 1% to test VaR at 99%.
+      - Compute the total no. of days as 'n' and the total no. of exceptions as 'x'.
+      - Compute p^ by dividind x/n.
+      - Compute Likelihood Ratio (LR) statistic and p-value.
+      - Decision rule: Reject if p < 0.05 → model is unreliable.
+        
+###  Interpretation:
+   - High exceptions → VaR underestimates risk.
+   - Low exceptions → VaR too conservative, ties up excess capital.
 
  
 
