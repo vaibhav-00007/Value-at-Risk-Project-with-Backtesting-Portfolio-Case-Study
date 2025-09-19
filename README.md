@@ -2,6 +2,30 @@
 Excel-based VaR project that pulls 1-year daily prices (AAPL, GLD, BTC), normalizes, builds portfolio returns, computes VaR (Historical / Parametric / Monte Carlo), and performs backtesting (Kupiec POF). Focus on automation (Power Query), reproducibility, and explainable finance.
 The goal is to measure portfolio risk, evaluate model reliability, and demonstrate applied risk analytics skills.
 
+## Table of Contents
+
+- [Background](#background)
+- [Questions to Analyze](#questions-to-analyze)
+- [Dataset](#dataset)
+  - [Source](#source)
+  - [Timeframe](#timeframe)
+  - [Portfolio Assumptions](#portfolio-assumptions)
+- [Reproducibility and Automation](#reproducibility-and-automation)
+  - [Data Pipeline](#data-pipeline)
+  - [Data Handling](#data-handling)
+  - [Compute Returns](#compute-returns)
+  - [Portfolio Returns](#portfolio-returns)
+- [Methodology](#methodology)
+  - [Historical Simulation](#1-historical-simulation)
+  - [Parametric (Variance-Covariance)](#2-parametric-variance-covariance)
+  - [Monte Carlo Simulation](#3-monte-carlo-simulation)
+- [Backtesting](#backtesting)
+  - [Kupiec’s Proportion of Failures (POF) Test](#kupiecs-proportion-of-failures-pof-test)
+- [Results & Interpretation](#results--interpretation)
+  - [Value at Risk (VaR) Estimates](#value-at-risk-var-estimates)
+  - [Backtesting (1-Day-99-ci)](#backtesting-1-day--99-ci)
+- [Limitations & Future Work](#limitations--future-work)
+
 ## Background
 
    - In real-world portfolio management, risk is just as important as return. Asset managers, banks, and hedge funds must continuously monitor the potential downside of their portfolios to comply with regulatory capital requirements (Basel III/IV), set risk limits, and design hedging strategies.
@@ -159,7 +183,7 @@ To evaluate the accuracy of the VaR models, backtesting was conducted using the 
 | Reliability                   | ❌ Not Reliable | ✅ Reliable | ✅ Reliable |
 
  ### Insight:
-   - Historical VaR is not reliable: it underestimates risk, with far more exceptions (11) than the expected ~2–3.
+   - Historical VaR is not reliable: it underestimates risk, with far more exceptions (11) than the expected ~2–4, → 350% higher breach rate.
    - Parametric VaR is acceptable, passing the backtest with a p-value above 5%.
    - Monte Carlo VaR is the most reliable, aligning closely with expected exceptions and a very strong p-value.
    - Monte Carlo provided the most conservative risk estimate, making it a useful tool for setting capital buffers under tail-risk scenarios.
@@ -169,7 +193,7 @@ To evaluate the accuracy of the VaR models, backtesting was conducted using the 
    - Current analysis assumes static portfolio weights (30/40/30). Dynamic rebalancing could be modeled.
    - Only daily returns over 1 year were used; extending to multi-year or intraday data would increase robustness.
    - Stress testing (e.g., COVID-19 crash, 2008 GFC periods) could be added for extreme risk assessment.
-   - Could extend beyond Excel into Python/R for scalability and additional tests (Christoffersen, Basel traffic light).
+   - Could extend beyond Excel into Python for scalability and additional tests (Christoffersen, Basel traffic light).
 
 
  
