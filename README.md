@@ -67,7 +67,7 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
 
    - Parameterized function [fnGetStooq1Y](code/fnGetStooq1Y.pq) downloads CSV, promotes headers, renames, converts types, filters last 1 year.
    - Create tickers for stocks [Apple](code/AAPL.US), [Bitcoin](code/BTCUSD), [Gold](code/XAUUSD) to load in the table.
-   - It makes data reproducible, single-click refresh; avoids manual CSV downloads.
+   - It makes data reproducible, single-click refresh; it avoids manual CSV downloads.
 
 ### Data Handling
 
