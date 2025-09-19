@@ -122,7 +122,41 @@ To validate whether the calculated VaR models are statistically reliable, I appl
    - High exceptions → VaR underestimates risk.
    - Low exceptions → VaR too conservative, ties up excess capital.
 
-## Results
+## Results & Interpretation
+
+### Value at Risk (VaR) Estimates
+Using three different methods (Historical, Parametric, and Monte Carlo), the 1-day portfolio VaR was calculated at both the 99% and **95% confidence intervals (CI):
+
+| VaR Methods   | 99% CI       | 95% CI       |
+|---------------|--------------|--------------|
+| Historical    | $22,267.34   | $16,321.97   |
+| Parametric    | $27,443.90   | $18,941.43   |
+| Monte Carlo   | $32,490.37   | $25,384.22   |
+
+ ### Insight:
+   - At 99% CI, the portfolio could lose ~$22K–$32K in a single day, depending on the method.
+   - On a $1,000,000 portfolio, this equals 2.2%–3.2% potential loss in extreme cases.
+   - Monte Carlo produced the highest risk estimate, while Historical gave the lowest.
+   - Parametric VaR lies in between, reflecting its reliance on distributional assumptions.
+   - For capital planning, risk buffers of at least $30 K per day are advisable.
+
+### Backtesting (1-Day @ 99% CI)
+To evaluate the accuracy of the VaR models, backtesting was conducted using the Kupiec test.
+
+| Metric                        | Historical | Parametric | Monte Carlo |
+|-------------------------------|------------|------------|-------------|
+| Actual exceedances (x)        | 11         | 6          | 3           |
+| Sample size (n)               | 249        | 249        | 249         |
+| Observed exceedance rate (p̂) | 4.42%      | 2.41%      | 1%          |
+| LR statistic                  | 15.96      | 3.58       | 0.099       |
+| p-value                       | 0.01%      | 5.83%      | 75%         |
+| Reliability                   | ❌ Not Reliable | ✅ Reliable | ✅ Reliable |
+
+ ### Insight:
+   - Historical VaR is not reliable: it underestimates risk, with far more exceptions (11) than the expected ~2–3.
+   - Parametric VaR is acceptable, passing the backtest with a p-value above 5%.
+   - Monte Carlo VaR is the most reliable, aligning closely with expected exceptions and a very strong p-value.
+
 
  
 
