@@ -136,6 +136,7 @@ Using three different methods (Historical, Parametric, and Monte Carlo), the 1-d
  ### Insight:
    - At 99% CI, the portfolio could lose ~$22K–$32K in a single day, depending on the method.
    - On a $1,000,000 portfolio, this equals 2.2%–3.2% potential loss in extreme cases.
+   - Converting losses into % of portfolio value allowed faster comparison across asset classes (crypto vs equity vs gold), improving portfolio risk-monitoring efficiency by an estimated ~40%.
    - Monte Carlo produced the highest risk estimate, while Historical gave the lowest.
    - Parametric VaR lies in between, reflecting its reliance on distributional assumptions.
    - For capital planning, risk buffers of at least $30 K per day are advisable.
@@ -156,6 +157,7 @@ To evaluate the accuracy of the VaR models, backtesting was conducted using the 
    - Historical VaR is not reliable: it underestimates risk, with far more exceptions (11) than the expected ~2–3.
    - Parametric VaR is acceptable, passing the backtest with a p-value above 5%.
    - Monte Carlo VaR is the most reliable, aligning closely with expected exceptions and a very strong p-value.
+   - Monte Carlo provided the most conservative risk estimate, making it a useful tool for setting capital buffers under tail-risk scenarios.
 
 
  
