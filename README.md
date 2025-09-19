@@ -46,6 +46,7 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
    - It makes data reproducible, single-click refresh; avoids manual CSV downloads.
 
 ### Data Handling
+
    - To align trading calendars (stock vs 24/7 crypto) and avoid errors due to missing values, the Excel function =IFERROR(stock,"") was used.
 
 
@@ -109,6 +110,7 @@ The project computes 1-day portfolio VaR at 95% and 99% confidence using three i
 To validate whether the calculated VaR models are statistically reliable, I applied:
 
 ###  Kupiec’s Proportion of Failures (POF) Test
+
    - This test specifically checks whether the no. of times losses exceeded the VaR number is consistent with the Confidence Interval set up by the model.
    - Steps:
       - Null hypothesis: Expected exception rate matches actual.
@@ -119,6 +121,7 @@ To validate whether the calculated VaR models are statistically reliable, I appl
       - Decision rule: Reject if p < 0.05 → model is unreliable.
         
 ###  Interpretation:
+
    - High exceptions → VaR underestimates risk.
    - Low exceptions → VaR too conservative, ties up excess capital.
 
@@ -134,6 +137,7 @@ Using three different methods (Historical, Parametric, and Monte Carlo), the 1-d
 | Monte Carlo   | $32,490.37   | $25,384.22   |
 
  ### Insight:
+ 
    - At 99% CI, the portfolio could lose ~$22K–$32K in a single day, depending on the method.
    - On a $1,000,000 portfolio, this equals 2.2%–3.2% potential loss in extreme cases.
    - Converting losses into % of portfolio value allowed faster comparison across asset classes (crypto vs equity vs gold), improving portfolio risk-monitoring efficiency by an estimated ~40%.
@@ -142,6 +146,7 @@ Using three different methods (Historical, Parametric, and Monte Carlo), the 1-d
    - For capital planning, risk buffers of at least $30 K per day are advisable.
 
 ### Backtesting (1-Day @ 99% CI)
+
 To evaluate the accuracy of the VaR models, backtesting was conducted using the Kupiec test.
 
 | Metric                        | Historical | Parametric | Monte Carlo |
@@ -158,6 +163,13 @@ To evaluate the accuracy of the VaR models, backtesting was conducted using the 
    - Parametric VaR is acceptable, passing the backtest with a p-value above 5%.
    - Monte Carlo VaR is the most reliable, aligning closely with expected exceptions and a very strong p-value.
    - Monte Carlo provided the most conservative risk estimate, making it a useful tool for setting capital buffers under tail-risk scenarios.
+
+## Limitations & Future Work
+
+   - Current analysis assumes static portfolio weights (30/40/30). Dynamic rebalancing could be modeled.
+   - Only daily returns over 1 year were used; extending to multi-year or intraday data would increase robustness.
+   - Stress testing (e.g., COVID-19 crash, 2008 GFC periods) could be added for extreme risk assessment.
+   - Could extend beyond Excel into Python/R for scalability and additional tests (Christoffersen, Basel traffic light).
 
 
  
