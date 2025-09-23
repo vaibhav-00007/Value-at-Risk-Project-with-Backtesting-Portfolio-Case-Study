@@ -176,19 +176,20 @@ Using three different methods (Historical, Parametric, and Monte Carlo), the 1-d
 
 To evaluate the accuracy of the VaR models, backtesting was conducted using the Kupiec test.
 
-| Metric                        | Historical | Parametric | Monte Carlo |
-|-------------------------------|------------|------------|-------------|
-| Actual exceedances (x)        | 11         | 6          | 3           |
-| Sample size (n)               | 249        | 249        | 249         |
-| Observed exceedance rate (p̂) | 4.42%      | 2.41%      | 1%          |
-| LR statistic                  | 15.96      | 3.58       | 0.099       |
-| p-value                       | 0.01%      | 5.83%      | 75%         |
-| Reliability                   | ❌ Not Reliable | ✅ Reliable | ✅ Reliable |
+| Metric                        | Historical | Parametric     | Monte Carlo |
+| ----------------------------- | ---------- | -------------- | ----------- |
+| Actual exceedances (x)        | 5          | 7              | 3           |
+| Sample size (n)               | 249        | 249            | 249         |
+| Observed exceedance rate (p̂) | 2.01%      | 2.81%          | 1%          |
+| LR statistic                  | 1.977      | 5.533          | 0.099       |
+| p-value                       | 15.97%     | 1.87%          | 75%         |
+| Reliability                   | ✅ Reliable | ❌ Not Reliable | ✅ Reliable  |
+
 
  ### Insight:
-   - Historical VaR is not reliable: it underestimates risk, with far more exceptions (11) than the expected ~2–4, → 350% higher breach rate.
-   - Parametric VaR is acceptable, passing the backtest with a p-value above 5%.
-   - Monte Carlo VaR is the most reliable, aligning closely with expected exceptions and a very strong p-value.
+   - Historical VaR is reliable, as the backtest p-value (15.97%) exceeds 5%, indicating observed exceedances align with expectations.
+   - Parametric VaR is not reliable, failing the Kupiec test with a p-value of 1.87%. The model underestimates risk.
+   - Monte Carlo VaR remains highly reliable, closely matching the expected exceedances and providing a strong p-value (75%).
    - Monte Carlo provided the most conservative risk estimate, making it a useful tool for setting capital buffers under tail-risk scenarios.
 
 ## Limitations & Future Work
