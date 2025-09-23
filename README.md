@@ -55,7 +55,7 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
 
 ### Timeframe
 
-   - 248 trading days (≈ 1 year).
+   - 249 trading days (≈ 1 year).
 
 ### Portfolio Assumptions
 
@@ -67,7 +67,8 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
 
    - Parameterized function [fnGetStooq1Y](code/fnGetStooq1Y.pq) downloads CSV, promotes headers, renames, converts types, filters last 1 year.
    - Create tickers for stocks [Apple](code/AAPL.US), [Bitcoin](code/BTCUSD), [Gold](code/XAUUSD) to load in the table.
-   - It makes data reproducible, single-click refresh; it avoids manual CSV downloads.
+   - In Power Query, used Merge Queries to join the three ticker tables on Date, ensuring aligned time series across assets.
+   - Loaded the merged table back into Excel for downstream calculations.
 
 ### Data Handling
 
@@ -94,7 +95,7 @@ The project computes 1-day portfolio VaR at 95% and 99% confidence using three i
    - Uses actual past portfolio returns.
    - No distributional assumptions (non-parametric).
    - Steps:
-      -   Collect the last 248 daily returns for each asset.
+      -   Collect the last 249 daily returns for each asset.
       -   Calculated Portfolio returns.
       -   Sorted returns in Ascending Order.
       -   Ranked the order 1 to 249.
@@ -105,7 +106,7 @@ The project computes 1-day portfolio VaR at 95% and 99% confidence using three i
 
    - Assumes returns follow a normal distribution.
    - Steps:
-      - Collect the last 248 daily returns for each asset.
+      - Collect the last 249 daily returns for each asset.
       - Calculated Portfolio returns.
       - Calculated Covariance Matrix.
       - Calculated mean (μ) and standard deviation (σ) of portfolio returns.
@@ -153,17 +154,19 @@ To validate whether the calculated VaR models are statistically reliable, I appl
 
 ### Value at Risk (VaR) Estimates
 Using three different methods (Historical, Parametric, and Monte Carlo), the 1-day portfolio VaR was calculated at both the 99% and **95% confidence intervals (CI):
+ 
 
 | VaR Methods   | 99% CI       | 95% CI       |
 |---------------|--------------|--------------|
-| Historical    | $22,267.34   | $16,321.97   |
-| Parametric    | $27,443.90   | $18,941.43   |
-| Monte Carlo   | $32,490.37   | $25,384.22   |
+| Historical    | $32,536.52   | $16,360.65   |
+| Parametric    | $27,446.33   | $18,933.82   |
+| Monte Carlo   | $36,835.05   | $27,562.58   |
+
 
  ### Insight:
  
-   - At 99% CI, the portfolio could lose ~$22K–$32K in a single day, depending on the method.
-   - On a $1,000,000 portfolio, this equals 2.2%–3.2% potential loss in extreme cases.
+   - At 99% CI, the portfolio could lose ~$27K–$36K in a single day, depending on the method.
+   - On a $1,000,000 portfolio, this equals 2.7%–3.6% potential loss in extreme cases.
    - Converting losses into % of portfolio value allowed faster comparison across asset classes (crypto vs equity vs gold), improving portfolio risk-monitoring efficiency by an estimated ~40%.
    - Monte Carlo produced the highest risk estimate, while Historical gave the lowest.
    - Parametric VaR lies in between, reflecting its reliance on distributional assumptions.
