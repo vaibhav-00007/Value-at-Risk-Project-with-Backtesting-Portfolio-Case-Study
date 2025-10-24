@@ -2,7 +2,7 @@
 Excel-based VaR project that pulls 1-year daily prices (AAPL, GLD, BTC), normalizes, builds portfolio returns, computes VaR (Historical / Parametric / Monte Carlo), and performs backtesting (Kupiec POF). Focus on automation (Power Query), reproducibility, and explainable finance.
 The goal is to measure portfolio risk, evaluate model reliability, and demonstrate applied risk analytics skills.
 
-![Dashboard](./Github_Images/VaR_Dashboard.png)
+![Dashboard](Github_Images/Dashboard.png)
 
 ## Table of Contents
 
