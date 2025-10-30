@@ -198,6 +198,7 @@ To evaluate the accuracy of the VaR models, backtesting was conducted using the 
 
    - Current analysis assumes static portfolio weights (30/40/30). Dynamic rebalancing could be modeled.
    - Only daily returns over 1 year were used; extending to multi-year or intraday data would increase robustness.
+   - Add Conditional VaR (CVaR / Expected Shortfall) analysis.
    - Stress testing (e.g., COVID-19 crash, 2008 GFC periods) could be added for extreme risk assessment.
    - Could extend beyond Excel into Python for scalability and additional tests (Christoffersen, Basel traffic light).
 
