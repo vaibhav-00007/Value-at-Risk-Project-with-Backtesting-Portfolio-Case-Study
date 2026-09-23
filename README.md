@@ -164,8 +164,8 @@ Using three different methods (Historical, Parametric, and Monte Carlo), the 1-d
 | Parametric    | $27,930.26   | $19,286.19   |
 | Monte Carlo   | $38,367.38   | $31,422.38   |
 
-**Note:** i) Figures reflect a rolling 1-year window as of [refresh date]; re-running the query will shift these slightly.
-          ii) Monte Carlo uses live random simulation — figure shown reflects one simulation run and will vary slightly on recalculation.
+**Note:** - i) Figures reflect a rolling 1-year window as of [refresh date]; re-running the query will shift these slightly.
+          - ii) Monte Carlo uses live random simulation — figure shown reflects one simulation run and will vary slightly on recalculation.
 
  ### Insight:
  
