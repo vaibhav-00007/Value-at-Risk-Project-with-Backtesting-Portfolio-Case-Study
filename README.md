@@ -61,14 +61,14 @@ The goal is to measure portfolio risk, evaluate model reliability, and demonstra
 
 ### Portfolio Assumptions
 
-   - The portfolio analyzed is valued at USD 1 million, allocated as follows: 30% Apple, 40% Gold, 30% Bitcoin.
+   - The portfolio analyzed is valued at USD 1 million, allocated as follows: 30% Apple, 40% Gold (XAUUSD spot price), 30% Bitcoin.
 
 ## Reproducibility and Automation
 
 ### Data Pipeline
 
    - Parameterized function [fnGetStooq1Y](code/fnGetStooq1Y.pq) downloads CSV, promotes headers, renames, converts types, filters last 1 year.
-   - Create tickers for stocks [Apple](code/AAPL.US), [Bitcoin](code/BTCUSD), [Gold](code/XAUUSD) to load in the table.
+   - Create tickers for stocks [Apple](code/AAPL.US), [Bitcoin](code/BTCUSD), [XAUUSD](code/XAUUSD) to load in the table.
    - In Power Query, used Merge Queries to join the three ticker tables on Date, ensuring aligned time series across assets.
    - Loaded the merged table back into Excel for downstream calculations.
 
@@ -160,16 +160,18 @@ Using three different methods (Historical, Parametric, and Monte Carlo), the 1-d
 
 | VaR Methods   | 99% CI       | 95% CI       |
 |---------------|--------------|--------------|
-| Historical    | $32,536.52   | $16,360.65   |
-| Parametric    | $27,446.33   | $18,933.82   |
-| Monte Carlo   | $36,835.05   | $27,562.58   |
+| Historical    | $32,536.52   | $17,449.26   |
+| Parametric    | $27,930.26   | $19,286.19   |
+| Monte Carlo   | $38,367.38   | $31,422.38   |
 
+**Note:** i) Figures reflect a rolling 1-year window as of [refresh date]; re-running the query will shift these slightly.
+          ii) Monte Carlo uses live random simulation — figure shown reflects one simulation run and will vary slightly on recalculation.
 
  ### Insight:
  
-   - At 99% CI, the portfolio could lose ~$27K–$36K in a single day, depending on the method.
-   - On a $1,000,000 portfolio, this equals 2.7%–3.6% potential loss in extreme cases.
-   - Converting losses into % of portfolio value allowed faster comparison across asset classes (crypto vs equity vs gold), improving portfolio risk-monitoring efficiency by an estimated ~40%.
+   - At 99% CI, the portfolio could lose ~$27K–$38K in a single day, depending on the method.
+   - On a $1,000,000 portfolio, this equals 2.7%–3.8% potential loss in extreme cases.
+   - Converting losses into % of portfolio value allowed faster comparison across asset classes (crypto vs equity vs gold).
    - Monte Carlo produced the highest risk estimate, while Historical gave the lowest.
    - Parametric VaR lies in between, reflecting its reliance on distributional assumptions.
    - For capital planning, risk buffers of at least $30 K per day are advisable.
